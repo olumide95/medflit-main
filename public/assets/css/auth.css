@@ -1,0 +1,46 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700);.navbar-default.green-bg {
+  background-color: #00a65a;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: #ffe;
+  background-color: transparent;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ffe;
+}
+
+.navbar-default .navbar-brand {
+  color: #ffe;
+}
+
+.navbar-brand > img {
+  display: block;
+  height: 100%;
+}
+
+.navbar-brand {
+  height: 70px;
+}
+
+.clear-bottom {
+  margin-bottom: 2em;
+}
+
+.clear-top {
+  margin-top: 2em;
+}
+
+a.nav-link {
+  color: #ffe;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+.help-block {
+  color: #f30;
+}
+
