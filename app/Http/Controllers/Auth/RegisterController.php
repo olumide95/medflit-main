@@ -120,10 +120,7 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'phone' => $data['phone'],
             'password' => bcrypt($data['password']),
-            'usertype' => $usertype,
-            'address' => '', 
-            'city_id' => '',
-            
+            'usertype' => $usertype,            
         ]);
 
         if($usertype == 2) {
@@ -133,6 +130,13 @@ class RegisterController extends Controller
                     'user_id' => $user['id'],
                     'firstname' => $data['firstname'],
                     'lastname' => $data['lastname'],
+                    'address' => null, 
+                    'city_id' => null,
+                    'state_id' => null,
+                    'gender' => null,
+                    'country_id' => null,
+                    'photo_url' => null,
+                    'date_of_birth' => null,
                 ]);
                 
             }

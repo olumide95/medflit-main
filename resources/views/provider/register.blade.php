@@ -21,7 +21,7 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
 
-                        @foreach ($errors as $error)
+                        @foreach ($errors->all() as $error)
                             <p>{{ $error }}</p>
                         @endforeach
 
@@ -93,30 +93,30 @@
 
                         <div class="row">
                         <div class="col-6">
-                        <div class="form-group{{ $errors->has('city') ? ' has-error' : '' }}">
-                            <label for="city" class="control-label">City</label>
-                            <select class="form-control" name="city">
+                        <div class="form-group{{ $errors->has('city_id') ? ' has-error' : '' }}">
+                            <label for="city_id" class="control-label">City</label>
+                            <select class="form-control" name="city_id">
                                 <option value="1">Lekki</option>
                                 <option value="2">Surulere</option>
                             </select>
-                            @if ($errors->has('city'))
+                            @if ($errors->has('city_id'))
                                     <small class="help-block form-text">
-                                        {{ $errors->first('city') }}
+                                        {{ $errors->first('city_id') }}
                                     </small>
                                 @endif
                         </div>
                         </div>
                         
                         <div class="col-6">
-						<div class="form-group{{ $errors->has('state') ? ' has-error' : '' }}">
-                            <label for="state" class="control-label">State</label>
-                            <select class="form-control" name="state">
+						<div class="form-group{{ $errors->has('state_id') ? ' has-error' : '' }}">
+                            <label for="state_id" class="control-label">State</label>
+                            <select class="form-control" name="state_id">
                                 <option value="1">Lagos</option>
                                 <option value="2">Abuja</option>
                             </select>
-                            @if ($errors->has('state'))
+                            @if ($errors->has('state_id'))
                                     <small class="help-block form-text">
-                                        {{ $errors->first('state') }}
+                                        {{ $errors->first('state_id') }}
                                     </small>
                                 @endif
                         </div>
@@ -125,38 +125,36 @@
 
                         <div class="row">
                         <div class="col-6">
-                        <div class="form-group{{ $errors->has('country') ? ' has-error' : '' }}">
-                            <label for="country" class="control-label">Country</label>
-                            <select class="form-control" name="country">
+                        <div class="form-group{{ $errors->has('country_id') ? ' has-error' : '' }}">
+                            <label for="country_id" class="control-label">Country</label>
+                            <select class="form-control" name="country_id">
                                 <option value="1">Nigeria</option>
                                 <option value="2">USA</option>
                             </select>
-                            @if ($errors->has('country'))
+                            @if ($errors->has('country_id'))
                                     <small class="help-block form-text">
-                                        {{ $errors->first('country') }}
+                                        {{ $errors->first('country_id') }}
                                     </small>
                                 @endif
                         </div>
                         </div>
                         </div>
 						
-						
-                    </form>
                 
         </div>
         <div class="col-md-5">
             <div class="col-12"><h4 class="">Professional Information</h4></div>
             <div class="row">
             <div class="col-12">
-            <div class="form-group{{ $errors->has('specialty') ? ' has-error' : '' }}">
-                <label for="specialty" class="control-label">Specialty</label>
-                <select class="form-control" name="specialty">
+            <div class="form-group{{ $errors->has('specialty_id') ? ' has-error' : '' }}">
+                <label for="specialty_id" class="control-label">Specialty</label>
+                <select class="form-control" name="specialty_id">
                     <option value="1">Nigeria</option>
                     <option value="2">USA</option>
                 </select>
-                @if ($errors->has('specialty'))
+                @if ($errors->has('specialty_id'))
                     <small class="help-block form-text">
-                        {{ $errors->first('specialty') }}
+                        {{ $errors->first('specialty_id') }}
                     </small>
                 @endif
             </div>
@@ -261,12 +259,13 @@
 
         <div class="col-12">
         <div class="form-group">
-                <input type="hidden" name="usertype" value="2">
+                <input type="hidden" name="usertype" value="3">
                 <button type="submit" class="btn btn-primary">
                     <i class="fa fa-btn fa-user"></i> Register
                 </button>
         </div>
         </div>
     </div>
+</form>
 </div>
 @endsection

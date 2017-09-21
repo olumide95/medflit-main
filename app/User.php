@@ -1,18 +1,21 @@
 <?php
 
-namespace App\Models;
+namespace App;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class Patient extends Model
+class User extends Authenticatable
 {
+    use Notifiable;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'user_id', 'firstname', 'lastname', 'address', 'city_id', 'state_id', 'gender', 'country_id', 'photo_url', 'date_of_birth', 'created_at', 'update_at',
+        'username', 'email', 'phone', 'usertype', 'password',
     ];
 
     /**
@@ -21,6 +24,6 @@ class Patient extends Model
      * @var array
      */
     protected $hidden = [
-        
+        'password', 'remember_token',
     ];
 }
