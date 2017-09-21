@@ -22,7 +22,7 @@ class CreateProvidersTable extends Migration
             $table->tinyInteger('state_id')->nullable();
             $table->tinyInteger('country_id')->nullable();            
             $table->tinyInteger('specialty_id')->nullable();
-            $table->integer('licence_id')->nullable();
+            $table->string('licence_id')->nullable();
             $table->string('medical_organization')->nullable();
             $table->date('licence_expiry_date')->nullable();
             $table->timestamps();            

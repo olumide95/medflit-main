@@ -255,7 +255,7 @@
 
         <div class="col-12">
         <div class="form-group">
-                <input type="hidden" name="usertype" value="4">
+                <input type="hidden" name="usertype" value="2">
                 <button type="submit" class="btn btn-primary">
                     <i class="fa fa-btn fa-user"></i> Register
                 </button>

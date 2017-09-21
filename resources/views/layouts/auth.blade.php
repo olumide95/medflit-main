@@ -1,5 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@yield('title')</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
-
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
 @section('adminlte_css')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
@@ -45,6 +58,21 @@
 
 @yield('body')
 
+    <footer>
+        <div class="container">
+            <div class="col-12" style="margin: 4em 0 2em;">
+            <a id="back_to_top" href="#"><i class="icon-up-open-big"></i></a>
+             
+            <div class="copyright text-center">
+            © 2017 <a href="www.medflit.com/">Medflit.com</a>. All Rights Reserved. </div>
+             
+            <div class="social">
+            <ul>
+            </ul>
+            </div>
+            </div>
+        </div>
+    </footer>
 
 @section('adminlte_js')
     <script src="{{ asset('vendor/adminlte/plugins/iCheck/icheck.min.js') }}"></script>
@@ -63,3 +91,6 @@
     </script>
     @yield('js')
 @stop
+
+</body>
+</html>

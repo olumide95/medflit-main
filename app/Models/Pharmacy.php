@@ -12,7 +12,7 @@ class Pharmacy extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'firstname', 'lastname', 'address', 'city', 'state', 'gender', 'country', 'pharmacy_name', 'created_at', 'update_at',
+        'user_id', 'firstname', 'lastname', 'address', 'city_id', 'state_id', 'country_id', 'business_name', 'licence_id', 'licence_expiry_date', 'affiliation', 'created_at', 'update_at',
     ];
 
     /**

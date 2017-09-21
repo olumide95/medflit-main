@@ -164,6 +164,23 @@ class RegisterController extends Controller
                     'user_id' => $user['id'],
                     'firstname' => $data['firstname'],
                     'lastname' => $data['lastname'],
+                    'country_id' => $data['country_id'],
+                    'address' => $data['address'],
+                    'city_id' => $data['city_id'],
+                    'state_id' => $data['state_id'],
+                    'business_name' => $data['business_name'],
+                    'licence_id' => $data['licence_id'],
+                    'licence_expiry_date' => $data['licence_expiry_date'],
+                    'affiliation' => $data['affiliation'],
+                ]);
+            }
+        } else if($usertype == 5) {
+            $this->redirectTo = '/pharmacy/index';
+            if($user) {
+                Pharmacy::create([
+                    'user_id' => $user['id'],
+                    'firstname' => $data['firstname'],
+                    'lastname' => $data['lastname'],
                     'gender' => $data['gender'],
                     'country_id' => $data['country'],
                     'address' => $data['address'],

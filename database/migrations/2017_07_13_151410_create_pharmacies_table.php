@@ -22,7 +22,7 @@ class CreatePharmaciesTable extends Migration
             $table->tinyInteger('state_id')->nullable();
             $table->tinyInteger('country_id')->nullable();
             $table->string('business_name')->nullable();
-            $table->integer('licence_id')->nullable();
+            $table->string('licence_id')->nullable();
             $table->string('affiliation')->nullable();
             $table->date('licence_expiry_date')->nullable();
             $table->timestamps();            
