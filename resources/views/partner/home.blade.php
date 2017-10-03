@@ -5,10 +5,10 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Welcome to Pharmacy Dashboard</div>
+                <div class="panel-heading">Welcome to Partner Dashboard</div>
 
                 <div class="panel-body">
-                    You are logged in as a pharmacist!
+                    You are logged in as a partner!
                 </div>
             </div>
         </div>

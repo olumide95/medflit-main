@@ -1,5 +1,40 @@
 @extends('layouts.auth')
 @section('title', 'Provider Registration')
+@section('navbar')
+    <nav class="navbar navbar-expand-lg navbar-primary bg-primary navbar-toggleable-sm">
+    <div class="container">
+        <a class="navbar-brand" href="{{ url('/') }}">
+            <img src="{{ url('public/assets/images/logo.png') }}" alt="Medflit logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav my-2 my-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="{{ url('http://www.medflit.com') }}">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <!-- Authentication Links -->
+                @if (Auth::guest())
+                    <li><a class="nav-link" href="{{ url('/login') }}">Login</a></li>
+                    <li><a class="nav-link" href="{{ url('/patient/register') }}">Register</a></li>
+                @else
+                    <li class="dropdown">
+                        <a class="nav-link" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                @endif
+            </ul>
+        </div>
+    </div>
+    </nav>
+
+@endsection
 @section('body')
 <div class="container">
     <div class="row">
@@ -12,7 +47,7 @@
         <div class="col-md-8 col-md-offset-2">
                 <nav class="nav nav-pills nav-justified clear-bottom">
                     <a class="nav-item nav-link active text-uppercase" href="#">Sign up</a>
-                    <a class="nav-item nav-link secondary disabled text-uppercase" href="#">Sign in</a>
+                    <a class="nav-item nav-link secondary disabled text-uppercase" href="{{ url('/login') }}">Sign in</a>
                 </nav>
             </div>
         <div class="col-md-7">

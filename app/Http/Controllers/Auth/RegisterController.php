@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Patient;
 use App\Models\Provider;
 use App\Models\Pharmacy;
+use App\Models\Partner;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -103,6 +104,24 @@ class RegisterController extends Controller
                 'licence_expiry_date' => 'required|date',
                 'affiliation' => 'required',
             ]);
+        } else if($usertype == 5) {
+            return Validator::make($data, [
+                'username' => 'required|max:255|unique:users',
+                'email' => 'required|email|max:255|unique:users',
+                'phone' => 'required|max:255|unique:users',
+                'password' => 'required|min:6|confirmed',
+                'contact_firstname' => 'required|max:255',
+                'contact_lastname' => 'required|max:255',
+                'contact_phone' => 'required',
+                'contact_email' => 'required|email|max:255',
+                'company_name' => 'required|max:255',
+                'company_phone' => 'required',
+                'company_email' => 'required|email|max:255',
+                'company_services' => 'required|max:255',
+                'usertype' => 'required|integer',
+                'tos' => 'required',
+                'company_address' => 'required|max:255',
+            ]);
         }
     }
 
@@ -175,21 +194,19 @@ class RegisterController extends Controller
                 ]);
             }
         } else if($usertype == 5) {
-            $this->redirectTo = '/pharmacy/index';
+            $this->redirectTo = '/partner/index';
             if($user) {
-                Pharmacy::create([
+                Partner::create([
                     'user_id' => $user['id'],
-                    'firstname' => $data['firstname'],
-                    'lastname' => $data['lastname'],
-                    'gender' => $data['gender'],
-                    'country_id' => $data['country'],
-                    'address' => $data['address'],
-                    'city_id' => $data['city'],
-                    'state_id' => $data['state'],
-                    'business_name' => $data['business_name'],
-                    'licence_id' => $data['licence_id'],
-                    'licence_expiry_date' => $data['licence_expiry_date'],
-                    'affiliation' => $data['affiliation'],
+                    'contact_firstname' => $data['contact_firstname'],
+                    'contact_lastname' => $data['contact_lastname'],
+                    'contact_email' => $data['contact_email'],
+                    'contact_phone' => $data['contact_phone'],
+                    'company_name' => $data['company_name'],
+                    'company_services' => $data['company_services'],
+                    'company_email' => $data['company_email'],
+                    'company_phone' => $data['company_phone'],
+                    'company_address' => $data['company_address'],
                 ]);
             }
         }
@@ -209,6 +226,21 @@ class RegisterController extends Controller
 
     public function showPharmacyRegistrationForm()
     {        
-        return view('pharmacy.register', ['title'=>'Partner Registration']);
+        return view('pharmacy.register', ['title'=>'Pharmacy Registration']);
+    }
+
+    public function showPartnerRegistrationForm()
+    {        
+        return view('partner.register', ['title'=>'Partner Registration']);
+    }
+
+    /**
+     * Show the application registration form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showRegistrationForm()
+    {
+        return view('patient.register', ['title'=>'Patient Registration']);
     }
 }

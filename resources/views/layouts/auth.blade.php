@@ -32,7 +32,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav my-2 my-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{{ url('/home') }}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ url('http://www.medflit.com') }}">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <!-- Authentication Links -->
                 @if (Auth::guest())

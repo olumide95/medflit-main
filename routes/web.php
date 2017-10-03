@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('dash');
-});
+Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Route::auth();
 Route::get('/logout', 'Auth\LoginController@logout');
@@ -58,5 +56,17 @@ Route::group(['middleware' => ['web']], function() {
 
 	Route::get('/pharmacy', 'PharmacyController@index');
 	Route::get('/pharmacy/index', 'PharmacyController@index');
+
+	//Login routes for pharmacies
+	Route::get('/partner/login', 'Auth\LoginController@showLoginForm');
+	Route::post('/partner/login', 'Auth\LoginController@login');
+	Route::get('/partner/logout', 'Auth\LoginController@logout');
+
+	//Register routes for pharmacies
+	Route::get('/partner/register', 'Auth\RegisterController@showPartnerRegistrationForm');
+	Route::post('/partner/register', 'Auth\RegisterController@register');
+
+	Route::get('/partner', 'PartnerController@index');
+	Route::get('/partner/index', 'PartnerController@index');
 
 });

@@ -13,7 +13,7 @@
             <div class="col-md-12">
                 <nav class="nav nav-pills nav-justified clear-bottom">
                     <a class="nav-item nav-link active text-uppercase" href="#">Sign up</a>
-                    <a class="nav-item nav-link secondary disabled text-uppercase" href="#">Sign in</a>
+                    <a class="nav-item nav-link secondary disabled text-uppercase" href="{{ url('/login') }}">Sign in</a>
                 </nav>
             </div>      
                     <form class="form-horizontal col-md-10" role="form" method="POST" action="{{ url('/register') }}">

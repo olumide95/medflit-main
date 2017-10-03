@@ -23,7 +23,7 @@
                 <div class="container">
                     <div class="navbar-header">
                         <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}" class="navbar-brand">
-                            {!! config('adminlte.logo', '<b>Admin</b>LTE') !!}
+                            <img src="{{ url('public/assets/images/logo.png') }}" alt="Medflit logo">
                         </a>
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
                             <i class="fa fa-bars"></i>
@@ -39,11 +39,13 @@
                     <!-- /.navbar-collapse -->
             @else
             <!-- Logo -->
-            <a href="{{ url(config('adminlte.dashboard_url', 'home')) }}" class="logo">
+            <a href="{{ url('/') }}" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini">{!! config('adminlte.logo_mini', '<b>A</b>LT') !!}</span>
+                <span class="logo-mini">
+                    <img src="{{ url('public/assets/images/logo.png') }}" alt="Medflit logo">
+                </span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg">{!! config('adminlte.logo', '<b>Admin</b>LTE') !!}</span>
+                <span class="logo-lg"><img src="{{ url('public/assets/images/logo.png') }}" alt="Medflit logo"></span>
             </a>
 
             <!-- Header Navbar -->
@@ -59,16 +61,16 @@
                     <ul class="nav navbar-nav">
                         <li>
                             @if(config('adminlte.logout_method') == 'GET' || !config('adminlte.logout_method') && version_compare(\Illuminate\Foundation\Application::VERSION, '5.3.0', '<'))
-                                <a href="{{ url(config('adminlte.logout_url', 'auth/logout')) }}">
+                                <a href="{{ url('logout') }}">
                                     <i class="fa fa-fw fa-power-off"></i> {{ trans('adminlte::adminlte.log_out') }}
                                 </a>
                             @else
-                                <a href="#"
+                                <a href="{{ url('logout') }}"
                                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                                 >
                                     <i class="fa fa-fw fa-power-off"></i> {{ trans('adminlte::adminlte.log_out') }}
                                 </a>
-                                <form id="logout-form" action="{{ url(config('adminlte.logout_url', 'auth/logout')) }}" method="POST" style="display: none;">
+                                <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                                     @if(config('adminlte.logout_method'))
                                         {{ method_field(config('adminlte.logout_method')) }}
                                     @endif
