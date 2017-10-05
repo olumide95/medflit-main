@@ -48,4 +48,10 @@ class HomeController extends Controller
         }
         return view('auth.login');
     }
+
+    public function payment() {
+        return view('payment.pay');
+    }
+
+    
 }

@@ -15,9 +15,11 @@ Route::get('/', 'Auth\LoginController@showLoginForm');
 
 Route::auth();
 Route::get('/logout', 'Auth\LoginController@logout');
-
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay');
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
 
 Route::get('/home', 'HomeController@index');
+Route::get('/payment', 'HomeController@payment');
 
 Route::group(['middleware' => ['web']], function() {
 	

@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Medflit Health Solutions'),
 
     /*
     |--------------------------------------------------------------------------
@@ -177,6 +177,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         //JeroenNoten\LaravelAdminLte\ServiceProvider::class,
+        Unicodeveloper\Paystack\PaystackServiceProvider::class,
 
     ],
 
@@ -226,6 +227,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Paystack' => Unicodeveloper\Paystack\Facades\Paystack::class,
 
     ],
 
