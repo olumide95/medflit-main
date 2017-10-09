@@ -83,8 +83,7 @@
                           <button class="btn btn-success btn-lg" type="button" value="Back to dashboard">
                           <i class="fa fa-plus-circle fa-lg"></i>Back to dashboard
                           </button>
-                    </p>
-                
+                    </p>                
               </div>
             </div>
     
